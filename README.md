@@ -51,48 +51,7 @@ pip install -r requirements.txt
 pip install gallery-dl
 ```
 
-## Dataset Collection
-To download images from Unsplash:
-```bash
-gallery-dl "https://unsplash.com/s/photos/random" --destination ./dataset/raw_images
-```
 
-## Preprocessing
-Run the following script to generate low-resolution images:
-```bash
-python preprocess.py
-```
-
-## Training the Model
-Run the training script:
-```bash
-python train.py --epochs 50 --batch-size 16
-```
-
-## Running Inference
-To restore an image using the trained model:
-```bash
-python inference.py --input low_res_image.jpg --output restored_image.jpg
-```
-
-## Model Architectures Used
-You can experiment with different models:
-- **SRCNN** (Super-Resolution Convolutional Neural Network)
-- **EDSR** (Enhanced Deep Super-Resolution Network)
-- **ESRGAN** (Enhanced Super-Resolution GAN)
-- **Custom CNN / Transformer-based approaches**
-
-## Evaluation Metrics
-- **PSNR (Peak Signal-to-Noise Ratio)**
-- **SSIM (Structural Similarity Index Measure)**
-
-## Results
-Sample before/after images and model performance metrics will be reported in `results/`.
-
-## Future Improvements
-- Train on a larger dataset
-- Implement real-time inference
-- Optimize for mobile and embedded devices
 
 ## License
 MIT License
