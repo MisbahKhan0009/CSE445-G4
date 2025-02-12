@@ -48,12 +48,12 @@ This project focuses on building a machine learning-based **super-resolution mod
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-repo/super-resolution.git
-cd super-resolution
+git clone [https://github.com/your-repo/super-resolution.git](https://github.com/MisbahKhan0009/CSE445-G4.git)
+cd CSE445-G4
 
 # Create a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+python -m venv CSE445
+CSE445\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
