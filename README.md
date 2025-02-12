@@ -48,7 +48,7 @@ This project focuses on building a machine learning-based **super-resolution mod
 
 ```bash
 # Clone the repository
-git clone [https://github.com/your-repo/super-resolution.git](https://github.com/MisbahKhan0009/CSE445-G4.git)
+git clone https://github.com/your-repo/super-resolution.git
 cd CSE445-G4
 
 # Create a virtual environment
