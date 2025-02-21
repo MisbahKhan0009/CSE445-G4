@@ -7,7 +7,7 @@ load_dotenv()
 API_KEY = os.getenv("PEXELS_API_KEY")
 
 URL = "https://api.pexels.com/v1/search"
-QUERY = "tree"
+QUERY = "Animal"
 PER_PAGE = 20  
 TOTAL_IMAGES = 100
 
