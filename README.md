@@ -1,82 +1,72 @@
-# Super-Resolution Image Restoration
-
-API docs: API docs: https://www.pexels.com/api/documentation/#photos-search__response__photos
+# Image Super-Resolution Project
 
 ## Overview
 
-This project focuses on building a machine learning-based **super-resolution model** to restore low-resolution images to their original quality. The dataset consists of 100 randomly acquired images from Unsplash using `gallery-dl`. The images are artificially degraded by **blurring** or **undersampling**, and the model learns to reconstruct high-resolution versions.
+This project focuses on enhancing the resolution of low-quality images using various machine learning and deep learning models. The primary objective is to improve image quality by generating high-resolution outputs from low-resolution inputs, preserving the original content and structure.
 
-## Project Workflow
+## Team Members
 
-1. **Dataset Collection**
+- **Md. Misbah Khan** (ID: 2132089642)
+- **Md Abdula Al Shyed** (ID: 2212592042)
+- **Rakibul Islam** (ID: 2212058642)
+- **Raju Ahamed Rabby** (ID: 2212592042)
 
-   - Download 100 random images from Unsplash using `gallery-dl`.
-   - Store the images in a structured dataset directory.
+## Models Implemented
 
-2. **Preprocessing**
+1. **XGBoost**: An open-source machine learning library known for its speed and efficiency in supervised learning tasks.
+2. **Random Forest**: An ensemble learning method that constructs multiple decision trees to improve predictive performance.
+3. **Convolutional Neural Networks (CNNs)**: Deep learning models designed for processing structured grid data, such as images, by utilizing convolutional layers to automatically learn spatial hierarchies of features.
+4. **Super-Resolution Generative Adversarial Networks (SRGANs)**: Deep learning models that enhance image resolution by generating high-quality images from low-resolution inputs.
 
-   - Downsample images using bicubic interpolation.
-   - Apply Gaussian blur to create low-resolution inputs.
-   - Store high-resolution (HR) and low-resolution (LR) image pairs.
+## Dataset Preparation
 
-3. **Model Training**
+- **Source**: Downloaded 100 high-resolution images from Pexels.
+- **Processing**: Resized images using the Pillow library and saved them in the `data/highRes` folder with sequential filenames (HR001.jpg, HR002.jpg, etc.).
+- **Downsampling**: Applied a factor of 10 using the Lanczos resampling filter to create low-resolution images, saved in the `data/lowRes` folder with corresponding filenames (LR001.jpg, LR002.jpg, etc.).
 
-   - Train a super-resolution model using any ML architecture (SRCNN, EDSR, ESRGAN, or custom CNN/Transformer-based models).
-   - Use high-resolution images as ground truth and low-resolution images as input.
+## Problem Statement
 
-4. **Evaluation**
+The challenge is to upscale low-resolution images to high-resolution ones. Traditional methods like K-Nearest Neighbors (KNN) and Bilinear Interpolation often result in images with larger pixels rather than true high-resolution outputs. Data Processing Inequality suggests that processing data cannot add information content, indicating the need for models that can infer missing details. Deep learning models, such as CNNs and SRGANs, are employed to address this by learning from large datasets to reconstruct high-resolution images.
 
-   - Use PSNR (Peak Signal-to-Noise Ratio) and SSIM (Structural Similarity Index) as metrics.
-   - Compare restored images with original high-resolution versions.
+## Approach
 
-5. **Testing & Inference**
-   - Test the model on unseen images.
-   - Deploy the model for real-time super-resolution tasks.
+We implemented and evaluated the performance of the four models mentioned above. Each model was trained and tested using the same dataset to ensure a fair comparison. The evaluation metrics included Peak Signal-to-Noise Ratio (PSNR) and Structural Similarity Index Measure (SSIM) to assess image quality.
 
-## Installation
+## Results
 
-### Prerequisites
+The performance of each model was evaluated based on PSNR and SSIM scores. Detailed results and comparisons are available in the `results` folder.
 
-- Python 3.x
-- `gallery-dl` (for downloading images from Unsplash)
-- TensorFlow / PyTorch
-- OpenCV
-- NumPy
-- Matplotlib
+## Requirements
 
-### Setup
+- **Python**: Version 3.11
+- **Libraries**:
+  - `numpy`
+  - `pandas`
+  - `scikit-learn`
+  - `tensorflow`
+  - `Pillow`
+## Installation steps: 
 
-```bash
-# Clone the repository
-git clone https://github.com/your-repo/super-resolution.git
-cd CSE445-G4
+1. **Clone the Repository**:
+   Open your terminal or command prompt and execute:
+   ```bash
+   git clone https://github.com/MisbahKhan0009/CSE445-G4.git
+   ```
 
-# Create a virtual environment
-python -m venv CSE445
-CSE445\Scripts\activate
 
-# Install dependencies
-pip install -r requirements.txt
+   This command creates a local copy of the repository on your machine.
 
-# Install gallery-dl for downloading images
-pip install gallery-dl
-```
+2. **Navigate to the Project Directory**:
+   Change into the project directory:
+   ```bash
+   cd CSE445-G4
+   ```
 
-## License
 
-MIT License
 
-## Group: 4
+And then set up your environemnt and install all the libraries. Then run the ```main.py``` file.
 
-### Wiki
 
-[Project Wiki](<[https://github.com/MisbahKhan0009/CSE445-G4](https://github.com/MisbahKhan0009/CSE445-G4/wiki)>)
 
-## Contributors
 
-- **[2132089642] Md. Misbah Khan** ([GitHub](https://github.com/MisbahKhan0009/))
-- **[2013823642] Raju Ahamed Rabby** ([GitHub](https://github.com/ahamedrabby123))
-- **[2212592042] Md. Abdula Al Shyed** ([GitHub](https://github.com/AbdulaAlShyed-2212592042))
-- **[2212058642] Rakibul Islam** ([GitHub](https://github.com/Rakib-28169-islam))
-
----
+  
