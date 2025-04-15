@@ -26,32 +26,44 @@ This project focuses on enhancing the resolution of low-quality images using var
 
 ## Problem Statement
 
-The challenge is to upscale low-resolution images to high-resolution ones. Traditional methods like K-Nearest Neighbors (KNN) and Bilinear Interpolation often result in images with larger pixels rather than true high-resolution outputs. Data Processing Inequality suggests that processing data cannot add information content, indicating the need for models that can infer missing details. Deep learning models, such as CNNs and SRGANs, are employed to address this by learning from large datasets to reconstruct high-resolution images.
+The challenge is to upscale low-resolution images to high-resolution ones. Traditional methods like K-Nearest Neighbors (KNN) and Bilinear Interpolation often result in images with larger pixels rather than true high-resolution outputs. 
+
+According to the **Data Processing Inequality**, no algorithm can increase the information content of an image. Therefore, advanced models like CNNs and SRGANs are needed to learn patterns from data and infer the missing high-frequency details necessary for realistic upscaling.
 
 ## Approach
 
-We implemented and evaluated the performance of the four models mentioned above. Each model was trained and tested using the same dataset to ensure a fair comparison. The evaluation metrics included Peak Signal-to-Noise Ratio (PSNR) and Structural Similarity Index Measure (SSIM) to assess image quality.
+We implemented and evaluated the performance of the four models mentioned above. Each model was trained and tested using the same dataset to ensure a fair comparison. The evaluation metrics included:
+
+- **Peak Signal-to-Noise Ratio (PSNR)**: Measures the ratio between the maximum possible power of a signal and the power of corrupting noise.
+- **Structural Similarity Index Measure (SSIM)**: Measures the similarity between two images based on luminance, contrast, and structure.
 
 ## Results
 
-The performance of each model was evaluated based on PSNR and SSIM scores. Detailed results and comparisons are available in the `results` folder.
+The performance of each model was evaluated based on PSNR and SSIM scores. The **XGBoost** and **Random Forest** models provided decent results but lacked the high-frequency details needed for sharp outputs.
+
+The **CNN** and **SRGAN** models performed significantly better, with SRGAN producing visually appealing high-resolution images. Detailed numerical results and visual comparisons are provided in the `results` folder.
 
 ## Requirements
 
-- **Python**: Version 3.11
-- **Libraries**:
-  - `numpy`
-  - `pandas`
-  - `scikit-learn`
-  - `tensorflow`
-  - `Pillow`
-## Installation steps: 
+- **Python**: Version 3.11 or above
+
+### Required Libraries
+
+- `numpy`
+- `pandas`
+- `scikit-learn`
+- `tensorflow`
+- `xgboost`
+- `opencv-python`
+- `matplotlib`
+- `Pillow`
+- `scikit-image` *(optional, for SSIM)*
+
+## Installation Steps
 
 1. **Clone the Repository**:
-   Open your terminal or command prompt and execute:
    ```bash
    git clone https://github.com/MisbahKhan0009/CSE445-G4.git
-   ```
 
 
    This command creates a local copy of the repository on your machine.
@@ -61,7 +73,11 @@ The performance of each model was evaluated based on PSNR and SSIM scores. Detai
    ```bash
    cd CSE445-G4
    ```
-
+3. **Install Dependencies: You can install all required libraries using**:
+   pip install -r requirements.txt
+   
+4. Run the Main Script:
+   python main.py
 
 
 And then set up your environemnt and install all the libraries. Then run the ```main.py``` file.
