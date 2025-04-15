@@ -1,0 +1,9 @@
+numpy
+opencv-python
+matplotlib
+tensorflow>=2.8
+xgboost>=1.7
+Pillow
+scikit-learn
+gallery-dl
+scikit-image
