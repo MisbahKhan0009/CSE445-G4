@@ -18,7 +18,7 @@ function Demo() {
       formData.append('file', file);
 
       try {
-        const response = await fetch('https://99b3-34-82-5-194.ngrok-free.app/enhance', {
+        const response = await fetch('https://0d36-34-143-253-96.ngrok-free.app/enhance', {
           method: 'POST',
           body: formData,
         });
